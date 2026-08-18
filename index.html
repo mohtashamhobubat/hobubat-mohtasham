@@ -1,137 +1,1442 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>حبوبات و خشکبار بازرگانی محتشم</title>
+
+<title>حبوبات محتشم | فروش حبوبات</title>
 
 <style>
+
+/* =========================
+   فونت
+========================= */
+
+@font-face {
+    font-family: "BNazanin";
+    src: local("B Nazanin"), local("BNazanin");
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Tahoma, Arial, sans-serif;
-    background-image:
-    url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0tngr-DAAQp39hYBT7IWo2pumLH1qUsvE4A5YEg8edg&s=10)
+    font-family: "BNazanin", Tahoma, Arial, sans-serif;
+    background: #f7f3e8;
     color: #333;
+    line-height: 1.8;
 }
 
-header {
-    background: #386641;
+
+/* =========================
+   منوی سایت
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(35, 70, 45, 0.98);
+    padding: 12px 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+
+.nav-container {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
     color: white;
-    text-align: center;
-    padding: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-header h1 {
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
     margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #f5c542;
+}
+
+
+/* =========================
+   دکمه‌ها
+========================= */
+
+.button {
+    display: inline-block;
+    background: #d69e2e;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #b98218;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   صفحه اصلی
+========================= */
 
 .hero {
-    background: white;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    color: white;
+    padding: 50px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
 }
 
-.hero h2 {
-    color: #386641;
+.hero h1 {
+    font-size: 58px;
+    margin: 0 0 15px;
 }
+
+.hero p {
+    font-size: 26px;
+}
+
+
+/* =========================
+   بخش‌ها
+========================= */
+
+section {
+    padding: 75px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #285943;
+    font-size: 38px;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   محصولات
+========================= */
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 30px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
 }
 
 .product {
     background: white;
-    padding: 25px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px #ccc;
+    transition: .3s;
 }
 
-.emoji {
-    font-size: 60px;
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 20px;
 }
 
 .product h3 {
-    color: #386641;
+    color: #285943;
+    font-size: 27px;
+    margin-top: 5px;
 }
 
-.order {
+.product p {
+    font-size: 18px;
+}
+
+.order-btn {
     display: inline-block;
-    background: #386641;
+    background: #285943;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 22px;
+    border-radius: 7px;
     text-decoration: none;
-    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 17px;
 }
 
-footer {
-    background: #263d2b;
+.order-btn:hover {
+    background: #1c422f;
+}
+
+
+/* =========================
+   عمده و خرده
+========================= */
+
+.business-section {
+
+    background:
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.cards {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+.info-card h3 {
+    color: #285943;
+    font-size: 30px;
+}
+
+
+/* =========================
+   درباره ما
+========================= */
+
+.about {
+
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+    font-size: 21px;
+    line-height: 2.2;
+
+    background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url("https://images.unsplash.com/photo-1498579397066-22750a3cb424?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+
+    padding: 40px;
+    border-radius: 20px;
+}
+
+
+/* =========================
+   همکاری
+========================= */
+
+.cooperation {
+
+    background:
+    linear-gradient(rgba(39,73,49,.88),rgba(39,73,49,.88)),
+    url("https://images.unsplash.com/photo-1498579397066-22750a3cb424?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+
     color: white;
     text-align: center;
-    padding: 25px;
 }
+
+.cooperation .section-title {
+    color: white;
+}
+
+
+/* =========================
+   فرم سفارش
+========================= */
+
+.order-section {
+
+    background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.order-form {
+
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 17px;
+}
+
+.form-group textarea {
+    height: 110px;
+}
+
+.submit {
+
+    width: 100%;
+
+    background: #285943;
+    color: white;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #1c422f;
+}
+
+
+/* =========================
+   راه‌های ارتباطی
+========================= */
+
+.support {
+    text-align: center;
+    background: #eee7d5;
+}
+
+.contact-box {
+
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 20px;
+}
+
+.contact-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.1);
+
+}
+
+.contact-card h3 {
+    color: #285943;
+    font-size: 25px;
+}
+
+.contact-card a {
+
+    color: #285943;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: #d69e2e;
+}
+
+
+/* =========================
+   آدرس‌ها
+========================= */
+
+.address-section {
+
+    background:
+
+    linear-gradient(
+        rgba(39,73,49,.9),
+        rgba(39,73,49,.9)
+    ),
+
+    url("https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=80")
+
+    center/cover;
+
+    color: white;
+}
+
+.address-section .section-title {
+    color: white;
+}
+
+.address-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.address-card {
+
+    background: rgba(255,255,255,.95);
+
+    color: #333;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.2);
+}
+
+.address-card h3 {
+
+    color: #285943;
+
+    font-size: 26px;
+
+    margin-top: 0;
+}
+
+.address-card p {
+
+    font-size: 19px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   فوتر
+========================= */
+
+footer {
+
+    background: #193624;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    font-size: 18px;
+}
+
+.footer-logo {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.copyright {
+
+    border-top: 1px solid rgba(255,255,255,.2);
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    font-size: 16px;
+
+    color: #ddd;
+}
+
+
+/* =========================
+   موبایل
+========================= */
+
+@media(max-width:750px) {
+
+    .nav-container {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .menu {
+
+        gap: 10px;
+    }
+
+    .menu a {
+
+        font-size: 14px;
+    }
+
+    .hero {
+
+        min-height: 480px;
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+    .hero p {
+
+        font-size: 20px;
+    }
+
+    .section-title {
+
+        font-size: 30px;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .address-container {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-<h1>حبوبات و خشکبار بازرگانی محتشم</h1>
-<p>حبوبات و خشکبار ارگانیک ، تازه و باکیفیت</p>
-</header>
 
-<section class="hero">
-<h2>به فروشگاه اینترنتی بازرگانی محتشم خوش آمدید</h2>
-<p>انواع حبوبات ارگانیک با کیفیت عالی</p>
+<!-- =========================
+     منوی سایت
+========================= -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+حبوبات محتشم
+</div>
+
+<ul class="menu">
+
+<li>
+<a href="#home">خانه</a>
+</li>
+
+<li>
+<a href="#products">محصولات</a>
+</li>
+
+<li>
+<a href="#wholesale">فروش عمده</a>
+</li>
+
+<li>
+<a href="#retail">فروش خرده</a>
+</li>
+
+<li>
+<a href="#about">درباره ما</a>
+</li>
+
+<li>
+<a href="#cooperation">همکاری با ما</a>
+</li>
+
+<li>
+<a href="#support">پشتیبانی</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<!-- =========================
+     خانه
+========================= -->
+
+<section
+class="hero"
+id="home"
+>
+
+<div>
+
+<h1>
+حبوبات محتشم
+</h1>
+
+<p>
+ارائه حبوبات تازه، مرغوب و باکیفیت
+</p>
+
+<a
+href="#products"
+class="button"
+>
+مشاهده محصولات
+</a>
+
+</div>
+
 </section>
 
-<section class="products">
+
+
+<!-- =========================
+     محصولات
+========================= -->
+
+<section
+id="products"
+>
+
+<h2
+class="section-title"
+>
+محصولات ما
+</h2>
+
+
+<div class="products">
+
+
+<!-- عدس -->
 
 <div class="product">
-<div class="emoji">🫘</div>
-<h3>عدس</h3>
-<p>عدس تازه و ارگانیک باکیفیت</p>
-<p>جهت اطلاع از قیمت: تماس بگیرید</p>
-<a class="order" href="#">سفارش</a>
+
+<img
+src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=800&q=80"
+alt="عدس"
+>
+
+<div class="product-content">
+
+<h3>
+عدس
+</h3>
+
+<p>
+عدس تازه و مرغوب
+</p>
+
+<p>
+قیمت: تماس بگیرید
+</p>
+
+<a
+href="#order"
+class="order-btn"
+>
+ثبت سفارش
+</a>
+
 </div>
 
-<div class="product">
-<div class="emoji">🫘</div>
-<h3>نخود</h3>
-<p>نخود تازه و مرغوب</p>
-<p>جهت اطلاع از قیمت: تماس بگیرید</p>
-<a class="order" href="#">سفارش</a>
 </div>
 
-<div class="product">
-<div class="emoji">🫘</div>
-<h3>لوبیا</h3>
-<p>لوبیای باکیفیت</p>
-<p>جهت اطلاع از قیمت: تماس بگیرید</p>
-<a class="order" href="#">سفارش</a>
-</div>
+
+
+<!-- نخود -->
 
 <div class="product">
-<div class="emoji">🫘</div>
-<h3>ماش</h3>
-<p>ماش تازه و مرغوب</p>
-<p>جهت اطلاع از قیمت: تماس بگیرید</p>
-<a class="order" href="#">سفارش</a>
+
+<img
+src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=800&q=80"
+alt="نخود"
+>
+
+<div class="product-content">
+
+<h3>
+نخود
+</h3>
+
+<p>
+نخود تازه و باکیفیت
+</p>
+
+<p>
+قیمت: تماس بگیرید
+</p>
+
+<a
+href="#order"
+class="order-btn"
+>
+ثبت سفارش
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- لوبیا -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=800&q=80"
+alt="لوبیا قرمز"
+>
+
+<div class="product-content">
+
+<h3>
+لوبیا قرمز
+</h3>
+
+<p>
+لوبیای مرغوب و تازه
+</p>
+
+<p>
+قیمت: تماس بگیرید
+</p>
+
+<a
+href="#order"
+class="order-btn"
+>
+ثبت سفارش
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ماش -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=800&q=80"
+alt="ماش"
+>
+
+<div class="product-content">
+
+<h3>
+ماش
+</h3>
+
+<p>
+ماش تازه و باکیفیت
+</p>
+
+<p>
+قیمت: تماس بگیرید
+</p>
+
+<a
+href="#order"
+class="order-btn"
+>
+ثبت سفارش
+</a>
+
+</div>
+
+</div>
+
+
 </div>
 
 </section>
+
+
+
+<!-- =========================
+     فروش عمده و خرده
+========================= -->
+
+<section
+class="business-section"
+id="wholesale"
+>
+
+<h2 class="section-title">
+فروش عمده و خرده
+</h2>
+
+
+<div class="cards">
+
+
+<div class="info-card">
+
+<h3>
+فروش عمده
+</h3>
+
+<p>
+مناسب فروشگاه‌ها، سوپرمارکت‌ها،
+رستوران‌ها و مراکز پخش.
+</p>
+
+<p>
+برای دریافت قیمت همکاری و سفارش عمده
+با ما تماس بگیرید.
+</p>
+
+<a
+href="#support"
+class="order-btn"
+>
+تماس با ما
+</a>
+
+</div>
+
+
+
+<div
+class="info-card"
+id="retail"
+>
+
+<h3>
+فروش خرده
+</h3>
+
+<p>
+امکان سفارش محصولات در وزن‌های مختلف
+برای مصرف خانگی.
+</p>
+
+<a
+href="#order"
+class="order-btn"
+>
+ثبت سفارش
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     درباره ما
+========================= -->
+
+<section
+id="about"
+>
+
+<h2 class="section-title">
+درباره حبوبات محتشم
+</h2>
+
+
+<div class="about">
+
+<p>
+مجموعه حبوبات محتشم با هدف ارائه حبوبات
+تازه و باکیفیت فعالیت می‌کند.
+</p>
+
+<p>
+کیفیت محصول، رضایت مشتری و ارائه خدمات
+مناسب، اولویت ماست.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     همکاری
+========================= -->
+
+<section
+class="cooperation"
+id="cooperation"
+>
+
+<h2 class="section-title">
+همکاری با ما
+</h2>
+
+<p style="font-size:22px;">
+اگر فروشگاه، رستوران یا مجموعه پخش دارید،
+برای همکاری با حبوبات محتشم با ما تماس بگیرید.
+</p>
+
+<a
+href="#support"
+class="button"
+>
+درخواست همکاری
+</a>
+
+</section>
+
+
+
+<!-- =========================
+     ثبت سفارش
+========================= -->
+
+<section
+class="order-section"
+id="order"
+>
+
+<h2 class="section-title">
+ثبت سفارش
+</h2>
+
+
+<div class="order-form">
+
+
+<div class="form-group">
+
+<label>
+نام و نام خانوادگی
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="نام خود را وارد کنید"
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+شماره تماس
+</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="مثلاً 09101234567"
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+محصول
+</label>
+
+<select id="product">
+
+<option>
+عدس
+</option>
+
+<option>
+نخود
+</option>
+
+<option>
+لوبیا قرمز
+</option>
+
+<option>
+ماش
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+وزن
+</label>
+
+<select id="weight">
+
+<option>
+1 کیلوگرم
+</option>
+
+<option>
+2 کیلوگرم
+</option>
+
+<option>
+5 کیلوگرم
+</option>
+
+<option>
+10 کیلوگرم
+</option>
+
+<option>
+25 کیلوگرم
+</option>
+
+<option>
+50 کیلوگرم
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+تعداد
+</label>
+
+<input
+id="count"
+type="number"
+value="1"
+min="1"
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+آدرس یا توضیحات
+</label>
+
+<textarea
+id="address"
+placeholder="آدرس یا توضیحات سفارش"
+></textarea>
+
+</div>
+
+
+
+<button
+class="submit"
+onclick="sendOrder()"
+>
+ارسال سفارش در واتساپ
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     راه‌های ارتباطی
+========================= -->
+
+<section
+class="support"
+id="support"
+>
+
+<h2 class="section-title">
+راه‌های ارتباطی
+</h2>
+
+
+<p>
+برای سفارش، پشتیبانی و همکاری با ما در ارتباط باشید.
+</p>
+
+
+<div class="contact-box">
+
+
+<!-- تلفن -->
+
+<div class="contact-card">
+
+<h3>
+☎ تلفن
+</h3>
+
+<a
+href="tel:04533332715"
+>
+04533332715
+</a>
+
+<br>
+
+<a
+href="tel:09104868085"
+>
+09104868085
+</a>
+
+</div>
+
+
+
+<!-- واتساپ -->
+
+<div class="contact-card">
+
+<h3>
+💬 واتساپ
+</h3>
+
+<a
+href="https://wa.me/989104868085"
+target="_blank"
+>
+پیام در واتساپ
+</a>
+
+</div>
+
+
+
+<!-- اینستاگرام -->
+
+<div class="contact-card">
+
+<h3>
+📷 اینستاگرام
+</h3>
+
+<a
+href="https://instagram.com/Ali__mohtasham73"
+target="_blank"
+>
+@Ali__mohtasham73
+</a>
+
+</div>
+
+
+
+<!-- تلگرام -->
+
+<div class="contact-card">
+
+<h3>
+✈️ تلگرام
+</h3>
+
+<a
+href="https://t.me/09104868085"
+target="_blank"
+>
+09104868085
+</a>
+
+</div>
+
+
+
+<!-- روبیکا -->
+
+<div class="contact-card">
+
+<h3>
+📱 روبیکا
+</h3>
+
+<a
+href="https://rubika.ir/09104868085"
+target="_blank"
+>
+09104868085
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     آدرس‌ها
+========================= -->
+
+<section
+class="address-section"
+>
+
+<h2 class="section-title">
+آدرس و محل فعالیت
+</h2>
+
+
+<div class="address-container">
+
+
+<div class="address-card">
+
+<h3>
+📍 آدرس دفتر
+</h3>
+
+<p>
+اردبیل، دروازه مشگین،
+کوچه فرج‌اللهی،
+پلاک ۲۵، واحد همکف
+</p>
+
+</div>
+
+
+
+<div class="address-card">
+
+<h3>
+🏭 آدرس انبار
+</h3>
+
+<p>
+اردبیل، شهرستان نمین،
+روستای سقزچی
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     فوتر
+========================= -->
 
 <footer>
-محتشم | اصالت ، کیفیت ، تعهد به همراهی
-شماره تماس 
-    04533332715
-    09104868085 
+
+
+<div class="footer-logo">
+حبوبات محتشم
+</div>
+
+
+<p>
+تازه | باکیفیت | مطمئن
+</p>
+
+
+<p>
+تلفن: 04533332715
+|
+09104868085
+</p>
+
+
+<div class="copyright">
+
+کلیه حقوق این سایت محفوظ است.
+<br>
+
+حبوبات محتشم © 2026
+
+</div>
+
+
 </footer>
 
+
+
+<!-- =========================
+     کد ثبت سفارش
+========================= -->
+
+<script>
+
+function sendOrder() {
+
+    const name =
+    document.getElementById("name").value.trim();
+
+    const phone =
+    document.getElementById("phone").value.trim();
+
+    const product =
+    document.getElementById("product").value;
+
+    const weight =
+    document.getElementById("weight").value;
+
+    const count =
+    document.getElementById("count").value;
+
+    const address =
+    document.getElementById("address").value.trim();
+
+
+    if (!name || !phone) {
+
+        alert(
+        "لطفاً نام و شماره تماس را وارد کنید."
+        );
+
+        return;
+    }
+
+
+    const message =
+    "سلام، برای ثبت سفارش از سایت حبوبات محتشم پیام می‌دهم.%0A%0A" +
+
+    "نام: " +
+    encodeURIComponent(name) +
+    "%0A" +
+
+    "شماره تماس: " +
+    encodeURIComponent(phone) +
+    "%0A" +
+
+    "محصول: " +
+    encodeURIComponent(product) +
+    "%0A" +
+
+    "وزن: " +
+    encodeURIComponent(weight) +
+    "%0A" +
+
+    "تعداد: " +
+    encodeURIComponent(count) +
+    "%0A" +
+
+    "آدرس/توضیحات: " +
+    encodeURIComponent(address);
+
+
+    const whatsappNumber =
+    "989104868085";
+
+
+    window.open(
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
 </body>
+
 </html>
+```
